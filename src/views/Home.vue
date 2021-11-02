@@ -35,7 +35,7 @@
                 >MyInfo</v-btn>
             </v-col>
         </v-row>
-
+        
         <v-row> 
             <v-col>
                 <v-btn
@@ -43,6 +43,13 @@
                 @click="goWatch"
                 >Watch</v-btn>
             </v-col>
+        </v-row>
+
+        <v-row class="d-flex ml-0" > 
+            <v-btn
+            elevation="2"
+            @click="goSlot"
+            >Slot</v-btn>
         </v-row>
 
 
@@ -97,6 +104,11 @@
             goWatch() {
                 this.$router.push('/watch').catch(()=>{})
                 console.log('Go Info ....')
+            }, 
+
+            goSlot() {
+                this.$router.push('/slotPaul').catch(()=>{})
+                console.log('Go Slot ....')
             }, 
 
         }, // methods 
