@@ -45,11 +45,18 @@
             </v-col>
         </v-row>
 
-        <v-row class="d-flex ml-0" > 
+        <v-row class="d-flex ml-0 mb-2" > 
             <v-btn
             elevation="2"
             @click="goSlot"
             >Slot</v-btn>
+        </v-row>
+
+        <v-row class="d-flex ml-0 mb-2" > 
+            <v-btn
+            elevation="2"
+            @click="goKey"
+            >Firebase</v-btn>
         </v-row>
 
 
@@ -109,6 +116,11 @@
             goSlot() {
                 this.$router.push('/slotPaul').catch(()=>{})
                 console.log('Go Slot ....')
+            }, 
+
+            goKey() {
+                this.$router.push('/keyPaul').catch(()=>{})
+                console.log('Go Key ....')
             }, 
 
         }, // methods 
