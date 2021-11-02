@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Sell from '../views/Sell.vue'
 import Contact from '../views/Contact.vue'
 import Info from '../views/Info.vue'
+import Watch from '../views/Watch.vue'
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,11 @@ const routes = [
     path: '/info',
     name: 'Info',
     component: Info
+  },
+  {
+    path: '/watch',
+    name: 'Watch',
+    component: Watch
   },
   {
     path: '/about',

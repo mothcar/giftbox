@@ -36,6 +36,15 @@
             </v-col>
         </v-row>
 
+        <v-row> 
+            <v-col>
+                <v-btn
+                elevation="2"
+                @click="goWatch"
+                >Watch</v-btn>
+            </v-col>
+        </v-row>
+
 
 
     </v-container>
@@ -66,22 +75,27 @@
 
         methods: {
             goHome() {
-                this.$router.push('/')
+                this.$router.push('/').catch(()=>{})
                 console.log('Go Home ....')
             }, 
 
             goSell() {
-                this.$router.push('/sell')
+                this.$router.push('/sell').catch(()=>{})
                 console.log('Go Sell ....')
             }, 
 
             goContact() {
-                this.$router.push('/contact')
+                this.$router.push('/contact').catch(()=>{})
                 console.log('Go Contact ....')
             }, 
 
             goInfo() {
-                this.$router.push('/info')
+                this.$router.push('/info').catch(()=>{})
+                console.log('Go Info ....')
+            }, 
+
+            goWatch() {
+                this.$router.push('/watch').catch(()=>{})
                 console.log('Go Info ....')
             }, 
 
