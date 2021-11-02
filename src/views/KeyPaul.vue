@@ -24,7 +24,7 @@
                 </v-card-text>
 
                 <v-card-text>
-                    4. Follow this Tut : https://www.youtube.com/watch?v=Htt8AKeF1Kw 
+                    4. Follow this Tut : <a href="https://www.youtube.com/watch?v=Htt8AKeF1Kw">Tut</a> / <a href="https://github.com/codingwithjustin/vue-firebase-crud">Source</a> 
                 </v-card-text>
 
                 <v-card-text>
