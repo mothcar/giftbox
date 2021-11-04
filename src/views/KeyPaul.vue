@@ -62,7 +62,7 @@
     // import HelloWorld from '../components/HelloWorld'
     // import {db} from '../firebase/db'
     // import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
-    import {createUser} from '@/firebase'
+    import {createUser, useLoadUsers} from '@/firebase'
 
     export default {
         name: 'KeyPayl',
@@ -77,7 +77,15 @@
             }
         }, 
 
-        created() {
+        watch: {
+            names(newVal, oldVal) {
+                console.log(`New : ${newVal}, old : ${oldVal}`)
+            }, // names
+        },
+
+        async created() {
+            const users = await useLoadUsers()
+            console.log('All users : ', users)
 
         }, // created() 
 
@@ -120,7 +128,7 @@
 
         }, // methods 
         firebase : {
-            // names : db.collection('names')
+            names : useLoadUsers()
         }
     }
 </script>

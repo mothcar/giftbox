@@ -32,11 +32,25 @@ export const deleteUser = id => {
   return usersCollection.doc(id).delete()
 }
 
-export const useLoadUsers = () => {
-  const users = ref([])
-  const close = usersCollection.onSnapshot(snapshot => {
-    users.value = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
-  })
-  onUnmounted(close)
+export const useLoadUsers = async () => {
+  // const users = ref([])
+  // const close = await usersCollection.onSnapshot(snapshot => {
+  //   users.value = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
+  // })
+  // onUnmounted(close)
+  var users = []
+    var userRef = await usersCollection.get()
+    .then(snapshot => {
+        snapshot.forEach(doc => {
+            users.push(doc.data())
+            console.log(doc.id, '=>', doc.data());
+        });
+    })
+    .catch(err => {
+        console.log('Error getting documents', err);
+    });
+    console.log(userRef)
+
+  
   return users
 }
