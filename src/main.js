@@ -4,7 +4,10 @@ import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify'
 import {firestorePlugin} from 'vuefire'
+import axios from 'axios'
 // import VueFire from 'vuefire'
+
+Vue.prototype.$axios = axios
 
 Vue.use(firestorePlugin)
 

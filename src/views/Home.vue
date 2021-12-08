@@ -66,6 +66,13 @@
             >Props</v-btn>
         </v-row>
 
+        <v-row class="d-flex ml-0 mb-2" > 
+            <v-btn
+            elevation="2"
+            @click="getDataByAxios"
+            >Get by Axios</v-btn>
+        </v-row>
+
 
 
     </v-container>
@@ -73,6 +80,7 @@
 
 <script>
     // import HelloWorld from '../components/HelloWorld'
+    
 
     export default {
         name: 'Home',
@@ -133,6 +141,28 @@
             goProps() {
                 this.$router.push('/goProps').catch(()=>{})
                 console.log('Go Props ....')
+            }, 
+
+            async getDataByAxios() {
+                // this.$router.push('/goProps').catch(()=>{})
+                // this.$axios.get('https://fakestoreapi.com/products')
+                // .then(function(response) {
+                // console.log(response);
+                // })
+                // .catch(function(error) {
+                // console.log(error);
+                // });
+                // console.log('Go Axios ....')
+                let url = 'https://fakestoreapi.com/products'
+                let response = await fetch(url);
+
+                if (response.ok) { // HTTP 상태 코드가 200~299일 경우
+                    // 응답 몬문을 받습니다(관련 메서드는 아래에서 설명).
+                    let json = await response.json();
+                    console.log('return : ', json)
+                } else {
+                alert("HTTP-Error: " + response.status);
+                }
             }, 
 
         }, // methods 
