@@ -59,6 +59,13 @@
             >Firebase</v-btn>
         </v-row>
 
+        <v-row class="d-flex ml-0 mb-2" > 
+            <v-btn
+            elevation="2"
+            @click="goProps"
+            >Props</v-btn>
+        </v-row>
+
 
 
     </v-container>
@@ -121,6 +128,11 @@
             goKey() {
                 this.$router.push('/keyPaul').catch(()=>{})
                 console.log('Go Key ....')
+            }, 
+
+            goProps() {
+                this.$router.push('/goProps').catch(()=>{})
+                console.log('Go Props ....')
             }, 
 
         }, // methods 
