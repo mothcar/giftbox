@@ -73,6 +73,13 @@
             >Get by Axios</v-btn>
         </v-row>
 
+        <v-row class="d-flex ml-0 mb-2" > 
+            <v-btn
+            elevation="2"
+            @click="excutePy"
+            >Excute Python</v-btn>
+        </v-row>
+
 
 
     </v-container>
@@ -164,6 +171,15 @@
                 alert("HTTP-Error: " + response.status);
                 }
             }, 
+
+            async excutePy() {
+                // const spawn = require("child_process").spawn;
+                // const pythonProcess = spawn('python',["../../mypy.py"]);
+                const getPy = await this.$axios.get('http://localhost:9090/test/py')
+                console.log('get Python : ', getPy.data.data.item)
+
+                
+            },
 
         }, // methods 
     }
